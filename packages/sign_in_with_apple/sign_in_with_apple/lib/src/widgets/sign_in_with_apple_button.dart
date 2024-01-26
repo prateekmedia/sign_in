@@ -17,10 +17,14 @@ class SignInWithAppleButton extends StatelessWidget {
     this.style = SignInWithAppleButtonStyle.black,
     this.borderRadius = const BorderRadius.all(Radius.circular(8.0)),
     this.iconAlignment = IconAlignment.center,
+    this.textStyle,
   }) : super(key: key);
 
   /// The callback that is be called when the button is pressed.
   final VoidCallback onPressed;
+  
+  /// TextStyle, cause why not?
+  final TextStyle? style;
 
   /// The text to display next to the Apple logo.
   ///
@@ -98,7 +102,7 @@ class SignInWithAppleButton extends StatelessWidget {
     final textWidget = Text(
       text,
       textAlign: TextAlign.center,
-      style: TextStyle(
+      style: style ?? TextStyle(
         inherit: false,
         fontSize: fontSize,
         color: _contrastColor,
