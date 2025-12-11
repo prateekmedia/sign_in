@@ -13,6 +13,7 @@ class SignInWithAppleButton extends StatelessWidget {
     super.key,
     required this.onPressed,
     this.text = 'Sign in with Apple',
+    this.textStyle,
     this.height = 44,
     this.style = SignInWithAppleButtonStyle.black,
     this.borderRadius = const BorderRadius.all(Radius.circular(8.0)),
@@ -26,6 +27,9 @@ class SignInWithAppleButton extends StatelessWidget {
   ///
   /// Defaults to `Sign in with Apple`.
   final String text;
+
+  /// TextStyle, cause why not?
+  final TextStyle? textStyle;
 
   /// The height of the button.
   ///
@@ -98,7 +102,7 @@ class SignInWithAppleButton extends StatelessWidget {
     final textWidget = Text(
       text,
       textAlign: TextAlign.center,
-      style: TextStyle(
+      style: textStyle ?? TextStyle(
         inherit: false,
         fontSize: fontSize,
         color: _contrastColor,
